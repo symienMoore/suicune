@@ -2,13 +2,14 @@ import Config
 
 # Configure your database
 config :server, Server.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "server_dev",
+  username: "symie_owner",
+  password: "PdF9olNb1ACZ",
+  hostname: "ep-proud-band-a44m8ypd.us-east-1.aws.neon.tech",
+  database: "symie",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  ssl: [cacerts: :public_key.cacerts_get()]
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

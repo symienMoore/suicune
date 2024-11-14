@@ -48,4 +48,8 @@ defmodule ServerWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug ServerWeb.Router
+
+  socket "/socket", ServerWeb.UserSocket,
+      websocket: true,
+      longpoll: false
 end

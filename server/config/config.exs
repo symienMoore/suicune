@@ -14,6 +14,7 @@ config :server,
 # Configures the endpoint
 config :server, ServerWeb.Endpoint,
   url: [host: "localhost"],
+  cors_plug: [origin: ["http://localhost:3000"]],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [json: ServerWeb.ErrorJSON],

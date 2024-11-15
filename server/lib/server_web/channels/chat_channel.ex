@@ -16,13 +16,15 @@ defmodule ServerWeb.ChatChannel do
   @impl true
   def handle_in("ping", payload, socket) do
     {:reply, {:ok, "you made it"}, socket}
+    broadcast!(socket, "ping", %{body: "you did it!"})
   end
 
   # It is also common to receive messages from the client and
   # broadcast to everyone in the current topic (chat:lobby).
   @impl true
   def handle_in("shout", payload, socket) do
-    broadcast(socket, "shout", payload)
+    broadcast!(socket, "shout", payload)
+    broadcast!(socket, "shout", %{body: "broadcasting from ping"})
     {:noreply, socket}
   end
 

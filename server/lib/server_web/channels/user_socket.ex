@@ -8,7 +8,7 @@ defmodule ServerWeb.UserSocket do
 
   ## Channels
 
-  channel "chat:*", ServerWeb.ChatChannel
+  channel "chat:lobby", ServerWeb.ChatChannel
   channel "location:lobby", ServerWeb.LocationChannel
 
   # Socket params are passed from the client and can
